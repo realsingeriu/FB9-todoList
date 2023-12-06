@@ -3,7 +3,7 @@ import styles from "../footer/footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
-const Footer = () => {
+const footer = () => {
   const email = "realsingeriu12@naver.com";
   return (
     <footer className={styles.footer}>
@@ -51,4 +51,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default footer;
