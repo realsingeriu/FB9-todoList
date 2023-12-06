@@ -4,6 +4,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
 import { useAuthContext } from "./context/useAuthContext";
+import Footer from "./footer/footer";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -20,6 +21,8 @@ function App() {
             <Route path="/signup" element={!user ? <Signup /> : <Home />} />
             <Route path="/login" element={!user ? <Login /> : <Home />} />
           </Routes>
+
+          <Footer />
         </BrowserRouter>
       )}
     </div>
