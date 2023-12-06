@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { useAuthContext } from "../context/useAuthContext";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const { dispatch, user } = useAuthContext();
@@ -18,7 +19,7 @@ export default function Navbar() {
       });
   };
   return (
-    <nav>
+    <nav className={styles.navbar}>
       <h1>My Todo List</h1>
       <ul>
         <li>
