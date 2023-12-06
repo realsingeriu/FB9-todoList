@@ -19,8 +19,8 @@ export default function Navbar() {
   };
   return (
     <nav>
+      <h1>My Todo List</h1>
       <ul>
-        <h1>My Todo List</h1>
         <li>
           <Link to="/">Home</Link>
         </li>

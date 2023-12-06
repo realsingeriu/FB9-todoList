@@ -17,14 +17,8 @@ function App() {
               path="/"
               element={user ? <Home /> : <Navigate to="/login" />}
             />
-            <Route
-              path="/signup"
-              element={user ? <Navigate to="/home" /> : <Signup />}
-            />
-            <Route
-              path="/login"
-              element={user ? <Navigate to="/home" /> : <Login />}
-            />
+            <Route path="/signup" element={!user ? <Signup /> : <Home />} />
+            <Route path="/login" element={!user ? <Login /> : <Home />} />
           </Routes>
         </BrowserRouter>
       )}
