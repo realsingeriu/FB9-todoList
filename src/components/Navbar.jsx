@@ -1,7 +1,18 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase/config";
 
 export default function Navbar() {
+  const logout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("유저 로그아웃");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   return (
     <nav>
       <h1>My Todo List</h1>
@@ -15,7 +26,7 @@ export default function Navbar() {
         <li>
           <Link to="/signup">Signup</Link>
         </li>
-        <li>Logout</li>
+        <li onClick={logout}>Logout</li>
       </ul>
     </nav>
   );

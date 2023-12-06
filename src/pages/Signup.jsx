@@ -1,17 +1,27 @@
 import { useState } from "react";
+import { auth } from "../firebase/config";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    setError(null);
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        console.log("유저가입 : ", res.user);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   return (
     <div>
-      <h2>Signup</h2>
+      <h2>회원가입</h2>
       <form onSubmit={handleSubmit}>
         <label>
           <span>email:</span>
@@ -32,6 +42,7 @@ export default function Signup() {
           />
         </label>
         <button>sign up</button>
+        {error && <p>{error}</p>}
       </form>
     </div>
   );
