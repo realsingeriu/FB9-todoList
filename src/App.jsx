@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
-
 import { useAuthContext } from "./context/useAuthContext";
 import Footer from "./footer/footer";
 
