@@ -10,8 +10,10 @@ export default function Home() {
   useEffect(() => {
     const ref = collection(db, "todos");
 
+    // todos 컬렉션에 모든 문서들을 가져오기
     getDocs(ref).then((snapshot) => {
       let results = [];
+      // 성공시 snapshot.docs에 모든 문서들이 들어있음
       snapshot.docs.forEach((doc) => {
         results.push({ id: doc.id, ...doc.data() });
       });
