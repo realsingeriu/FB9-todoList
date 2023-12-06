@@ -1,12 +1,23 @@
 import { useState } from "react";
+import { auth } from "../firebase/config";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    setError(false);
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        console.log("유저로그인 : ", res.user);
+      })
+      .catch((err) => {
+        setError(err.message);
+      });
   };
 
   return (
@@ -32,6 +43,7 @@ export default function Login() {
           />
         </label>
         <button>log in</button>
+        {error && <p>{error}</p>}
       </form>
     </div>
   );
