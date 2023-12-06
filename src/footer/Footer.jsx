@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
       </div>
       <div className={styles.copyRight}>
-        <p>&copy; 2023 My Money App. All rights reserved.</p>
+        <p>&copy; 2023 To Do List App. All rights reserved.</p>
       </div>
     </footer>
   );
