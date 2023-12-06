@@ -1,11 +1,16 @@
+import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
+import { db } from "../firebase/config";
 
 export default function TodoForm() {
   const [newTodo, setNewTodo] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(newTodo);
+    const ref = collection(db, "todos");
+    await addDoc(ref, {
+      title: newTodo,
+    });
 
     setNewTodo("");
   };
