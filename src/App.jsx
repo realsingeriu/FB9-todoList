@@ -3,8 +3,9 @@ import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Navbar from "./components/Navbar";
-import Footer from "./footer/footer";
+
 import { useAuthContext } from "./context/useAuthContext";
+import Footer from "./footer/footer";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
