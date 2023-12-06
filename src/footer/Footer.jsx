@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../footer/Footer.module.css";
+import styles from "../footer/footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
