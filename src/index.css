@@ -13,16 +13,6 @@ body {
   margin: 0 auto;
 }
 
-.todo-list ul {
-  padding: 0;
-}
-.todo-list li {
-  list-style-type: none;
-  padding: 10px;
-  background: #fff;
-  margin: 10px 0;
-  cursor: pointer;
-}
 label,
 label span {
   display: block;

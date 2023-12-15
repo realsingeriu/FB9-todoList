@@ -1,9 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
-import Navbar from "./components/Navbar";
+import Navbar from "./navbar/Navbar";
 import { useAuthContext } from "./context/useAuthContext";
 import Footer from "./footer/footer";
 import News from "./pages/MyNews";
@@ -16,6 +15,7 @@ function App() {
       {authIsReady && (
         <BrowserRouter>
           <Navbar />
+          <div style={{ marginBottom: "50px" }}></div>
           <Routes>
             <Route
               path="/"

@@ -2,6 +2,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../firebase/config";
 import { useAuthContext } from "../context/useAuthContext";
+import "./MynewsForm.css";
 
 export default function MynewsForm() {
   const [newNewsTitle, setNewNewsTitle] = useState("");
@@ -25,7 +26,7 @@ export default function MynewsForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form-container">
       <label>
         <span>제목:</span>
         <input

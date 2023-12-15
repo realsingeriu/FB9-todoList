@@ -2,6 +2,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { db } from "../firebase/config";
 import { useAuthContext } from "../context/useAuthContext";
+import "./TodoForm.css";
 
 export default function TodoForm() {
   const [newTodo, setNewTodo] = useState("");
@@ -20,9 +21,9 @@ export default function TodoForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="Todo-Form" onSubmit={handleSubmit}>
       <label>
-        <span>새 할일 :</span>
+        <span>새 할일 추가</span>
         <input
           required
           type="text"

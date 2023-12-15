@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../firebase/config";
 import { useAuthContext } from "../context/useAuthContext";
 import styles from "./Navbar.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Navbar() {
   const { dispatch, user } = useAuthContext();
@@ -42,9 +43,11 @@ export default function Navbar() {
             <li>
               <Link to="/news">My News</Link>
             </li>
-            <button className="btn" onClick={logout}>
-              로그아웃
-            </button>
+            <li>
+              <button className="btn" onClick={logout}>
+                로그아웃
+              </button>
+            </li>
           </>
         )}
       </ul>
