@@ -25,11 +25,11 @@
     transform: scale(0.98);
   }
 
-  .buttons-container {
+  buttons-container {
     display: flex;
   }
 
-  .button {
+  button {
     margin-left: 10px;
     padding: 8px;
     background-color: #772eff;
@@ -39,7 +39,7 @@
     transition: background-color 0.3s;
   }
 
-  .button:hover {
+  button:hover {
     background-color: #5c24b4;
   }
 }

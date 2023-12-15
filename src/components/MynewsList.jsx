@@ -24,6 +24,12 @@ export default function MynewsList({ news }) {
             </div>
             <button
               className="add-button"
+              onClick={() => handleEditer(news.id, news.title, news.content)}
+            >
+              수정
+            </button>
+            <button
+              className="add-button"
               onClick={() => handleClick(news.id, news.title, news.content)}
             >
               삭제
