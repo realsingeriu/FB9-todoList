@@ -39,6 +39,9 @@ export default function Navbar() {
         {user && (
           <>
             <li>환영합니다, {user.email}</li>
+            <li>
+              <Link to="/news">My News</Link>
+            </li>
             <button className="btn" onClick={logout}>
               로그아웃
             </button>
