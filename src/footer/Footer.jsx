@@ -25,7 +25,7 @@ const Footer = () => {
             <a href={`mailto:${email}`}>
               <IoMdMail
                 style={{ fontSize: "30px", color: "white" }}
-                className="icon"
+                className={styles.icon}
               />
             </a>
           </p>
@@ -36,7 +36,7 @@ const Footer = () => {
               target="_blank"
             >
               <FaGithub
-                className="icon"
+                className={styles.icon}
                 style={{ fontSize: "30px", color: "white" }}
               />
             </a>

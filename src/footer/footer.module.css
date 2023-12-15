@@ -1,12 +1,18 @@
-/* Footer.module.css */
+.footer-container {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-height: 40%;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  z-index: 1000;
+}
+
 .footer {
   background-color: #772eff;
   color: #fff;
   padding: 5px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 40%;
 }
 
 .container {
@@ -15,6 +21,7 @@
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+  height: 100%;
 }
 
 .info {
