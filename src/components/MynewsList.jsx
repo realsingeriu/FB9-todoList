@@ -16,8 +16,13 @@ export default function MynewsList({ news }) {
     <div className="news-list">
       <ul>
         {news.map((news) => (
-          <li key={news.id} onClick={() => handleClick(news.id, news.title)}>
-            {news.title}
+          <li
+            key={news.id}
+            onClick={() => handleClick(news.id, news.title, news.content)}
+          >
+            제목: {news.title}
+            <hr></hr>
+            <p>내용: {news.content}</p>
           </li>
         ))}
       </ul>

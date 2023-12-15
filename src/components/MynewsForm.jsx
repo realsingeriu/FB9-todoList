@@ -4,30 +4,43 @@ import { db } from "../firebase/config";
 import { useAuthContext } from "../context/useAuthContext";
 
 export default function MynewsForm() {
-  const [newNews, setNewNews] = useState("");
+  const [newNewsTitle, setNewNewsTitle] = useState("");
+  const [newNewsContent, setNewNewsContent] = useState("");
   const { user } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const ref = collection(db, "news");
 
     await addDoc(ref, {
-      title: newNews,
+      title: newNewsTitle,
+      content: newNewsContent,
       uid: user.uid,
     });
 
-    setNewNews("");
+    // 입력 후에 입력 필드 초기화
+    setNewNewsTitle("");
+    setNewNewsContent("");
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        <span>추가할 뉴스 :</span>
+        <span>제목:</span>
         <input
           required
           type="text"
-          onChange={(e) => setNewNews(e.target.value)}
-          value={newNews}
+          onChange={(e) => setNewNewsTitle(e.target.value)}
+          value={newNewsTitle}
+        />
+      </label>
+      <label>
+        <span>내용:</span>
+        <textarea
+          required
+          onChange={(e) => setNewNewsContent(e.target.value)}
+          value={newNewsContent}
         />
       </label>
       <button>추가</button>
