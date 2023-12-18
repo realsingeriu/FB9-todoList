@@ -5,7 +5,7 @@ import Login from "./pages/Login";
 import Navbar from "./navbar/Navbar";
 import { useAuthContext } from "./context/useAuthContext";
 import News from "./pages/MyNews";
-import Footer from "./footer/footer";
+import Footer from "./pages/footer";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
