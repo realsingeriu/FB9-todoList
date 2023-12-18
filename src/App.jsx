@@ -6,6 +6,7 @@ import Navbar from "./navbar/Navbar";
 import { useAuthContext } from "./context/useAuthContext";
 import News from "./pages/MyNews";
 import Footer from "./pages/footer";
+import Profile from "./pages/Profile";
 
 function App() {
   const { user, authIsReady } = useAuthContext();
@@ -28,6 +29,10 @@ function App() {
             <Route
               path="/login"
               element={!user ? <Login /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/profile"
+              element={user ? <Profile /> : <Navigate to="/" />}
             />
             <Route path="/news" element={<News />} />
           </Routes>

@@ -39,7 +39,9 @@ export default function Navbar() {
 
         {user && (
           <>
-            <li>환영합니다, {user.email}</li>
+            <li>
+              <Link to="/Profile">환영합니다, {user.email}</Link>
+            </li>
             <li>
               <Link to="/news">My News</Link>
             </li>
